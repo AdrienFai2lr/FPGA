@@ -1,0 +1,77 @@
+Comparing against output data 
+*******************************************
+PASS: The output matches the golden output!
+*******************************************
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_exo1_top glbl -Oenable_linking_all_libraries -prj exo1.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims -L unisims_ver -L xpm -L floating_point_v7_1_16 -L floating_point_v7_0_21 --lib ieee_proposed=./ieee_proposed -s exo1 
+Multi-threading is on. Using 10 slave threads.
+Determining compilation order of HDL files.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/AESL_sim_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1_icmp_32s_32s_1_2_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'exo1_icmp_32s_32s_1_2_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1_icmp_32s_32s_1_2_1_sub.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'exo1_icmp_32s_32s_1_2_1_sub'
+INFO: [VRFC 10-3107] analyzing entity 'exo1_icmp_32s_32s_1_2_1_sub_comb_adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1_mul_32s_32s_32_5_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'exo1_mul_32s_32s_32_5_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1_sub_32ns_32ns_32_2_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'exo1_sub_32ns_32ns_32_2_1'
+INFO: [VRFC 10-3107] analyzing entity 'exo1_sub_32ns_32ns_32_2_1_comb_adder'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1.autotb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'apatb_exo1_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'exo1'
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling module work.glbl
+Compiling architecture behav of entity xil_defaultlib.exo1_mul_32s_32s_32_5_1 [\exo1_mul_32s_32s_32_5_1(num_sta...]
+Compiling architecture behav of entity xil_defaultlib.exo1_icmp_32s_32s_1_2_1_sub_comb_adder [\exo1_icmp_32s_32s_1_2_1_sub_com...]
+Compiling architecture behav of entity xil_defaultlib.exo1_icmp_32s_32s_1_2_1_sub_comb_adder [\exo1_icmp_32s_32s_1_2_1_sub_com...]
+Compiling architecture behav of entity xil_defaultlib.exo1_icmp_32s_32s_1_2_1_sub [exo1_icmp_32s_32s_1_2_1_sub_defa...]
+Compiling architecture behav of entity xil_defaultlib.exo1_icmp_32s_32s_1_2_1 [\exo1_icmp_32s_32s_1_2_1(id=1,nu...]
+Compiling architecture behav of entity xil_defaultlib.exo1_sub_32ns_32ns_32_2_1_comb_adder [\exo1_sub_32ns_32ns_32_2_1_comb_...]
+Compiling architecture behav of entity xil_defaultlib.exo1_sub_32ns_32ns_32_2_1 [exo1_sub_32ns_32ns_32_2_1_defaul...]
+Compiling architecture behav of entity xil_defaultlib.exo1 [exo1_default]
+Compiling architecture behav of entity xil_defaultlib.apatb_exo1_top
+Built simulation snapshot exo1
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/exo1/xsim_script.tcl
+# xsim {exo1} -autoloadwcfg -tclbatch {exo1.tcl}
+Time resolution is 1 ps
+source exo1.tcl
+## run all
+Note: simulation done!
+Time: 169500 ps  Iteration: 1  Process: /apatb_exo1_top/generate_sim_done_proc  File: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1.autotb.vhd
+Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
+Time: 169500 ps  Iteration: 1  Process: /apatb_exo1_top/generate_sim_done_proc  File: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/vhdl/exo1.autotb.vhd
+$finish called at time : 169500 ps
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Feb 28 12:08:31 2025...
+Comparing against output data 
+*******************************************
+PASS: The output matches the golden output!
+*******************************************

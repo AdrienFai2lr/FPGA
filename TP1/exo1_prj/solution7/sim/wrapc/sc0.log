@@ -1,0 +1,29 @@
+   Build using "/tools/Xilinx/Vitis_HLS/2023.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_exo1.cpp
+   Compiling (apcc) exo1.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adrien.failler' on host '21de013.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Fri Feb 28 12:08:20 CET 2025
+INFO: [HLS 200-10] On os Debian GNU/Linux 12 (bookworm)
+INFO: [HLS 200-10] In directory '/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc/apcc_db_adrien.failler/184361740740900567560
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 1.46 seconds. Total CPU system time: 0.07 seconds. Total elapsed time: 1.46 seconds; peak allocated memory: 99.621 MB.
+   Compiling (apcc) exo1_test.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adrien.failler' on host '21de013.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Fri Feb 28 12:08:22 CET 2025
+INFO: [HLS 200-10] On os Debian GNU/Linux 12 (bookworm)
+INFO: [HLS 200-10] In directory '/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+In file included from /home/etudiants/master1/adrien.failler/FPGA/exo1_test.c:1:
+/home/etudiants/master1/adrien.failler/FPGA/exo1_test.c:23:7: warning: implicit declaration of function 'system' is invalid in C99 [-Wimplicit-function-declaration]
+  if (system("diff -w out.dat out.gold.dat")) {
+      ^
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc/apcc_db_adrien.failler/185371740740902977176
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 1.48 seconds. Total CPU system time: 0.09 seconds. Total elapsed time: 1.51 seconds; peak allocated memory: 99.621 MB.
+   Compiling apatb_exo1_ir.ll
+   Generating cosim.tv.exe

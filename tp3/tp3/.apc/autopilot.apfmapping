@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="seuilCout.c" path="/home/etudiants/master1/adrien.failler/FPGA/tp3/seuilCout.c"/>
+    <originFiles name="seuilCout.h" path="/home/etudiants/master1/adrien.failler/FPGA/tp3/seuilCout.h"/>
+  </source>
+  <testbench>
+    <originFiles name="testSeuilCout.c" path="/home/etudiants/master1/adrien.failler/FPGA/tp3/testSeuilCout.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

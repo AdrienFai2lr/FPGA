@@ -1,0 +1,14 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "exo1.c",
+    "fileloc": 3,
+    "instructions": 20,
+    "name": "exo1",
+    "stores": {
+      "T": 1
+    },
+    "total_instructions": 20
+  }
+}

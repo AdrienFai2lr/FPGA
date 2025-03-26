@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1740740159844">
+  <ports id="1" name="res" type="PortType" originalName="res" coreId="584583416" bitwidth="32" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="2" name="c1" type="PortType" originalName="c1" coreId="584583616" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="c2" type="PortType" originalName="c2" coreId="3576306819" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="in1" type="PortType" originalName="in1" coreId="544106345" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="in2" type="PortType" originalName="in2" coreId="0" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="32" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="34" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="36" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="38" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="39" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="40" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="41" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="42" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="43" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="44" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="45" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="46" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="49" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="50" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="51" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="52" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="55" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@ports.0"/>
+  <edges id="56" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.10"/>
+  <blocks id="29" name="exo1" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="in2_read" lineNumber="4" originalName="in2" fileName="exo1.c" fileDirectory="../." coreId="1667592275" contextFuncName="exo1" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="4" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>in2</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="in1_read" lineNumber="4" originalName="in1" fileName="exo1.c" fileDirectory="../." coreId="544424224" contextFuncName="exo1" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="4" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>in1</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="c2_read" lineNumber="4" originalName="c2" fileName="exo1.c" fileDirectory="../." coreId="544424224" contextFuncName="exo1" bitwidth="32" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="4" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>c2</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="c1_read" lineNumber="4" originalName="c1" fileName="exo1.c" fileDirectory="../." coreId="1701605485" contextFuncName="exo1" bitwidth="32" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="4" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>c1</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="temp1" lineNumber="13" originalName="temp1" fileName="exo1.c" fileDirectory="../." rtlName="mul_32s_32s_32_1_1_U2" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" contextFuncName="exo1" bitwidth="32" opcode="mul" m_display="0" m_delay="8.51" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="13" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="temp2" lineNumber="14" originalName="temp2" fileName="exo1.c" fileDirectory="../." rtlName="mul_32s_32s_32_1_1_U3" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" contextFuncName="exo1" bitwidth="32" opcode="mul" m_display="0" m_delay="8.51" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="14" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="temp3" lineNumber="16" originalName="temp3" fileName="exo1.c" fileDirectory="../." rtlName="mul_32s_32s_32_1_1_U1" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" contextFuncName="exo1" bitwidth="32" opcode="mul" m_display="0" m_delay="8.51" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="16" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="icmp_ln18" lineNumber="18" fileName="exo1.c" fileDirectory="../." rtlName="icmp_ln18_fu_79_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="exo1" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.55" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="18" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="temp4" lineNumber="21" originalName="temp4" fileName="exo1.c" fileDirectory="../." rtlName="temp4_fu_85_p2" coreName="Adder" implIndex="fabric" control="no" opType="sub" coreId="1" contextFuncName="exo1" bitwidth="32" opcode="sub" m_display="0" m_delay="2.55" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="21" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="temp4_1" lineNumber="18" originalName="temp4" fileName="exo1.c" fileDirectory="../." rtlName="res" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="exo1" bitwidth="32" opcode="select" m_display="0" m_delay="0.69" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="18" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="res_write_ln23" lineNumber="23" fileName="exo1.c" fileDirectory="../." coreId="584707920" contextFuncName="exo1" opcode="write" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="23" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>res</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="_ln24" lineNumber="24" fileName="exo1.c" fileDirectory="../." coreId="584707920" contextFuncName="exo1" opcode="ret" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="exo1.c" linenumber="24" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA" functionName="exo1"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="exo1.c">
+      <validLinenumbers>4</validLinenumbers>
+      <validLinenumbers>13</validLinenumbers>
+      <validLinenumbers>14</validLinenumbers>
+      <validLinenumbers>16</validLinenumbers>
+      <validLinenumbers>18</validLinenumbers>
+      <validLinenumbers>21</validLinenumbers>
+      <validLinenumbers>23</validLinenumbers>
+      <validLinenumbers>24</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <expressionNodes realName="icmp_ln18_fu_79">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="temp2_fu_72">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="temp3_fu_61">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="temp4_1_fu_91">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="temp4_fu_85">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="temp1_fu_65">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="c1_read_read_fu_48">
+    <nodeIds>20</nodeIds>
+  </ioNodes>
+  <ioNodes realName="c2_read_read_fu_42">
+    <nodeIds>19</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln23_write_fu_54">
+    <nodeIds>27</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in2_read_read_fu_30">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in1_read_read_fu_36">
+    <nodeIds>18</nodeIds>
+  </ioNodes>
+  <ioPorts name="c1">
+    <contents name="read">
+      <nodeIds>20</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="c2">
+    <contents name="read">
+      <nodeIds>19</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in1">
+    <contents name="read">
+      <nodeIds>18</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in2">
+    <contents name="read">
+      <nodeIds>17</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="res">
+    <contents name="write">
+      <nodeIds>27</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="exo1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>29</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

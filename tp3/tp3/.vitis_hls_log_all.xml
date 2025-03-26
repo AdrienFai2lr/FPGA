@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptPix' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.959+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptB' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.943+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptG' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.938+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptR' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.933+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

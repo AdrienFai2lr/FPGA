@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "exo1",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "exo1"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution6/csynth.tcl",
+    "sourceLine": 18,
+    "success": true
+  }
+]

@@ -1,0 +1,14 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../exo1_test.c in debug mode
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'adrien.failler' on host '23hp012.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Tue Mar 04 11:19:54 CET 2025
+INFO: [HLS 200-10] On os Debian GNU/Linux 12 (bookworm)
+INFO: [HLS 200-10] In directory '/home/etudiants/master1/adrien.failler/FPGA/TP1/exo1_prj/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/TP1/exo1_prj/solution1/csim/build/apcc_db_adrien.failler/112891741083594815500
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 0.99 seconds. Total CPU system time: 0.12 seconds. Total elapsed time: 1.07 seconds; peak allocated memory: 99.629 MB.
+   Generating csim.exe
+Comparing against output data 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

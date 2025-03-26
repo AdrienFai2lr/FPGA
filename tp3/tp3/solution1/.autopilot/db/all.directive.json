@@ -1,0 +1,44 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "detectCoul",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "detectCoul"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "detectCoul",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "detectCoul"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csynth.tcl",
+    "sourceLine": 16,
+    "success": true
+  }
+]

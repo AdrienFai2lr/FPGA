@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[COSIM 212-47]" key="COSIM_TCL_47_1115" tag="" content="Using XSIM for RTL simulation." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-14]" key="COSIM_TCL_14_1084" tag="" content="Instrumenting C test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/apcc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;adrien.failler&apos; on host &apos;21de013.univ-brest.fr&apos; (Linux_x86_64 version 6.1.0-18-amd64) on Fri Feb 28 12:08:20 CET 2025" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1429" tag="" content="On os Debian GNU/Linux 12 (bookworm)" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc/apcc_db_adrien.failler/184361740740900567560" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/apcc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;adrien.failler&apos; on host &apos;21de013.univ-brest.fr&apos; (Linux_x86_64 version 6.1.0-18-amd64) on Fri Feb 28 12:08:22 CET 2025" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1429" tag="" content="On os Debian GNU/Linux 12 (bookworm)" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/sim/wrapc/apcc_db_adrien.failler/185371740740902977176" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-302]" key="COSIM_TCL_302_1177" tag="" content="Starting C TB testing ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-333]" key="COSIM_TCL_333_1204" tag="" content="Generating C post check test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-12]" key="COSIM_TCL_12_1082" tag="" content="Generating RTL test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-1]" key="COSIM_TCL_1_1071" tag="" content="*** C/RTL co-simulation file generation completed. ***" resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-322]" key="COSIM_TCL_322_1194" tag="" content="Starting VHDL simulation." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-15]" key="COSIM_TCL_15_1085" tag="" content="Starting XSIM ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-316]" key="COSIM_TCL_316_1188" tag="" content="Starting C post checking ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-1000]" key="COSIM_TCL_1000_1070" tag="" content="*** C/RTL co-simulation finished: PASS ***" resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-211]" key="COSIM_TCL_211_1174" tag="" content="II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command cosim_design CPU user time: 12.5 seconds. CPU system time: 0.9 seconds. Elapsed time: 14.42 seconds; current allocated memory: 6.602 MB." resolution=""/>
+</Messages>

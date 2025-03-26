@@ -1,0 +1,113 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -rtl=vhdl
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 3 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -rtl vhdl -tool xsim 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 287.062 MB.
+INFO: [HLS 200-10] Analyzing design file 'exo1.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.21 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.41 seconds; current allocated memory: 288.465 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 11 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 11 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 8 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 18 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 19 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution7/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.73 seconds. CPU system time: 0.21 seconds. Elapsed time: 7.01 seconds; current allocated memory: 290.473 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 290.473 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 290.926 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 291.004 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 311.512 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 311.512 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'exo1' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exo1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-1015] Estimated delay Estimated delay (3.871ns)  of 'mul' operation 32 bit ('temp1', exo1.c:13) exceeds the target cycle time (target cycle time: 3.000ns, clock uncertainty: 0.810ns, effective cycle time: 2.190ns).
+
+WARNING: [HLS 200-871] Estimated clock period (3.871 ns) exceeds the target (target clock period: 3.000 ns, clock uncertainty: 0.810 ns, effective delay budget: 2.190 ns).
+WARNING: [HLS 200-1016] The critical path in module 'exo1' consists of the following:
+	wire read operation ('in1', exo1.c:4) on port 'in1' (exo1.c:4) [18]  (0.000 ns)
+	'mul' operation 32 bit ('temp1', exo1.c:13) [21]  (3.871 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 311.512 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 311.512 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exo1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'exo1/res' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'exo1/c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'exo1/c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'exo1/in1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'exo1/in2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'exo1' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'icmp_32s_32s_1_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sub_32ns_32ns_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exo1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 311.512 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 311.512 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.16 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.22 seconds; current allocated memory: 314.691 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for exo1.
+INFO: [VLOG 209-307] Generating Verilog RTL for exo1.
+INFO: [HLS 200-789] **** Estimated Fmax: 258.33 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2.41 seconds. CPU system time: 0.38 seconds. Elapsed time: 8.4 seconds; current allocated memory: 27.629 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_cosim -rtl=vhdl
+INFO: [HLS 200-1464] Running solution command: config_cosim -tool=xsim
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 3 -name default 
+INFO: [HLS 200-1510] Running: config_cosim -rtl vhdl -tool xsim 
+INFO: [HLS 200-1510] Running: cosim_design -rtl vhdl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-322] Starting VHDL simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 12.5 seconds. CPU system time: 0.9 seconds. Elapsed time: 14.42 seconds; current allocated memory: 6.602 MB.

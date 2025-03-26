@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="exo1.c" path="/home/etudiants/master1/adrien.failler/FPGA/TP1/exo1.c"/>
+    <originFiles name="exo1.h" path="/home/etudiants/master1/adrien.failler/FPGA/TP1/exo1.h"/>
+  </source>
+  <testbench>
+    <originFiles name="exo1_test.c" path="/home/etudiants/master1/adrien.failler/FPGA/TP1/exo1_test.c"/>
+    <originFiles name="out.gold.dat" path="/home/etudiants/master1/adrien.failler/FPGA/TP1/out.gold.dat"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

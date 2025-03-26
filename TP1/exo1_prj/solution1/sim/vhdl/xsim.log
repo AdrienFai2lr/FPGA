@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Feb 28 11:43:28 2025
+# Process ID: 14463
+# Current directory: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution1/sim/vhdl
+# Command line: xsim -mode tcl -source {xsim.dir/exo1/xsim_script.tcl}
+# Log file: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution1/sim/vhdl/xsim.log
+# Journal file: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution1/sim/vhdl/xsim.jou
+# Running On: 21de013, OS: Linux, CPU Frequency: 4333.826 MHz, CPU Physical cores: 6, Host memory: 16436 MB
+#-----------------------------------------------------------
+source xsim.dir/exo1/xsim_script.tcl
+# xsim {exo1} -autoloadwcfg -tclbatch {exo1.tcl}
+Time resolution is 1 ps
+source exo1.tcl
+## run all
+Note: simulation done!
+Time: 307500 ps  Iteration: 1  Process: /apatb_exo1_top/generate_sim_done_proc  File: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution1/sim/vhdl/exo1.autotb.vhd
+Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
+Time: 307500 ps  Iteration: 1  Process: /apatb_exo1_top/generate_sim_done_proc  File: /home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution1/sim/vhdl/exo1.autotb.vhd
+$finish called at time : 307500 ps
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Feb 28 11:43:31 2025...

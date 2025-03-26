@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 54,
+    "calls": "",
+    "file": "seuilCout.c",
+    "fileloc": 26,
+    "instructions": 172,
+    "loads": {
+      "G": 38,
+      "L": 3
+    },
+    "name": "detectCoul",
+    "stores": {
+      "G": 17,
+      "L": 1,
+      "T": 15
+    },
+    "total_instructions": 172
+  }
+}

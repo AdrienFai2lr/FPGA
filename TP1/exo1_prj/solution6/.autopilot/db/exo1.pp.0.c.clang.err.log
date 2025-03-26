@@ -1,0 +1,4 @@
+/home/etudiants/master1/adrien.failler/FPGA/exo1_prj/solution6/csynth.tcl:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=exo1_XLX_SEP_ PragmaOptions=name=exo1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=exo1
+        ^
+1 warning generated.
