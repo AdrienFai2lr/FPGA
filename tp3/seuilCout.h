@@ -20,3 +20,5 @@ typedef struct{
 void seuilCout(pixelType *pixOut,pixelType pixIn);
 
 void detectCoul(detectType *res, validType *valid, pixelType pixIn);
+
+void traitCoul(pixelType *pixIn, pixelType *pixOut, detectType *resultats, validType *valid);

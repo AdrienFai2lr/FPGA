@@ -125,3 +125,13 @@ void detectCoul(detectType *resultats, validType *valid, pixelType pixIn){
         cptR = 0;
     }
 }
+
+
+
+void traitCoul(pixelType *pixIn, pixelType *pixOut, detectType *resultats, validType *valid) {
+    // Appel à la première fonction pour le seuillage des couleurs
+    seuilCout(pixOut, pixIn);
+    
+    // Appel à la deuxième fonction pour la détection de couleur
+    detectCoul(resultats, valid, pixIn);
+}
