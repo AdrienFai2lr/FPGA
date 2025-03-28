@@ -5,7 +5,7 @@
 ## Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ############################################################
 open_project tp3
-set_top detectCoul
+set_top traitCoul
 add_files seuilCout.c
 add_files seuilCout.h
 add_files -tb testSeuilCout.c -cflags "-Wno-unknown-pragmas"

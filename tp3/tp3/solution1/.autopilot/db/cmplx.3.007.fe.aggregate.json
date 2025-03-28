@@ -1,18 +1,34 @@
 {
   "0": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "seuilCout.c",
+    "fileloc": 131,
+    "instructions": 43,
+    "loads": {
+      "T": 4
+    },
+    "name": "traitCoul",
+    "stores": {
+      "T": 3
+    },
+    "total_instructions": 196
+  },
+  "1": {
     "basicblocks": 41,
     "calls": "",
     "file": "seuilCout.c",
     "fileloc": 26,
-    "instructions": 141,
+    "instructions": 153,
     "loads": {
-      "G": 16
+      "G": 16,
+      "L": 3
     },
     "name": "detectCoul",
     "stores": {
       "G": 17,
-      "T": 15
+      "L": 15
     },
-    "total_instructions": 141
+    "total_instructions": 153
   }
 }

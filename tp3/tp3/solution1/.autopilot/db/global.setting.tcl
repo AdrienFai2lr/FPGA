@@ -1,5 +1,5 @@
 
-set TopModule "detectCoul"
+set TopModule "traitCoul"
 set ClockPeriod 15
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
@@ -23,7 +23,7 @@ set ResetRegisterNum 0
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix detectCoul_
+set RtlSubPrefix traitCoul_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}

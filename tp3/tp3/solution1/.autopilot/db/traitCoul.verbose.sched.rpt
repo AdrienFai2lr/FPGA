@@ -1,0 +1,152 @@
+
+
+================================================================
+== Vitis HLS Report for 'traitCoul'
+================================================================
+* Date:           Fri Mar 28 16:56:53 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        tp3
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  15.00 ns|  10.722 ns|     4.05 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  15.000 ns|  15.000 ns|    1|    1|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 10.0>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%pixIn_read = read i96 @_ssdm_op_Read.ap_auto.i96P0A, i96 %pixIn" [seuilCout.c:3->seuilCout.c:133]   --->   Operation 3 'read' 'pixIn_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%valR = trunc i96 %pixIn_read" [seuilCout.c:3->seuilCout.c:133]   --->   Operation 4 'trunc' 'valR' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%valG = partselect i32 @_ssdm_op_PartSelect.i32.i96.i32.i32, i96 %pixIn_read, i32 32, i32 63" [seuilCout.c:3->seuilCout.c:133]   --->   Operation 5 'partselect' 'valG' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%valB = partselect i32 @_ssdm_op_PartSelect.i32.i96.i32.i32, i96 %pixIn_read, i32 64, i32 95" [seuilCout.c:3->seuilCout.c:133]   --->   Operation 6 'partselect' 'valB' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (10.0ns)   --->   "%call_ret = call i16 @detectCoul, i96 %pixIn_read, i32 %cptR, i32 %cptG, i32 %cptB, i32 %cptPix" [seuilCout.c:135]   --->   Operation 7 'call' 'call_ret' <Predicate = true> <Delay = 10.0> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 10.7>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specpipeline_ln9 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:9]   --->   Operation 8 'specpipeline' 'specpipeline_ln9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%spectopmodule_ln131 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [seuilCout.c:131]   --->   Operation 9 'spectopmodule' 'spectopmodule_ln131' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i96 %pixIn"   --->   Operation 10 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %pixIn, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i96 %pixOut"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %pixOut, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %resultats"   --->   Operation 14 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %resultats, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %valid"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %valid, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (2.55ns)   --->   "%icmp_ln15 = icmp_slt  i32 %valR, i32 %valG" [seuilCout.c:15->seuilCout.c:133]   --->   Operation 18 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (2.55ns)   --->   "%icmp_ln15_1 = icmp_slt  i32 %valR, i32 %valB" [seuilCout.c:15->seuilCout.c:133]   --->   Operation 19 'icmp' 'icmp_ln15_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns) (grouped into LUT with out node resR)   --->   "%or_ln15 = or i1 %icmp_ln15, i1 %icmp_ln15_1" [seuilCout.c:15->seuilCout.c:133]   --->   Operation 20 'or' 'or_ln15' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (0.97ns) (out node of the LUT)   --->   "%resR = select i1 %or_ln15, i32 0, i32 %valR" [seuilCout.c:15->seuilCout.c:133]   --->   Operation 21 'select' 'resR' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (2.55ns)   --->   "%icmp_ln16 = icmp_slt  i32 %valG, i32 %valR" [seuilCout.c:16->seuilCout.c:133]   --->   Operation 22 'icmp' 'icmp_ln16' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (2.55ns)   --->   "%icmp_ln16_1 = icmp_slt  i32 %valG, i32 %valB" [seuilCout.c:16->seuilCout.c:133]   --->   Operation 23 'icmp' 'icmp_ln16_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node resG)   --->   "%or_ln16 = or i1 %icmp_ln16, i1 %icmp_ln16_1" [seuilCout.c:16->seuilCout.c:133]   --->   Operation 24 'or' 'or_ln16' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.97ns) (out node of the LUT)   --->   "%resG = select i1 %or_ln16, i32 0, i32 %valG" [seuilCout.c:16->seuilCout.c:133]   --->   Operation 25 'select' 'resG' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (2.55ns)   --->   "%icmp_ln17 = icmp_slt  i32 %valB, i32 %valR" [seuilCout.c:17->seuilCout.c:133]   --->   Operation 26 'icmp' 'icmp_ln17' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (2.55ns)   --->   "%icmp_ln17_1 = icmp_slt  i32 %valB, i32 %valG" [seuilCout.c:17->seuilCout.c:133]   --->   Operation 27 'icmp' 'icmp_ln17_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns) (grouped into LUT with out node resB)   --->   "%or_ln17 = or i1 %icmp_ln17, i1 %icmp_ln17_1" [seuilCout.c:17->seuilCout.c:133]   --->   Operation 28 'or' 'or_ln17' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.97ns) (out node of the LUT)   --->   "%resB = select i1 %or_ln17, i32 0, i32 %valB" [seuilCout.c:17->seuilCout.c:133]   --->   Operation 29 'select' 'resB' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%or_ln21_1 = bitconcatenate i96 @_ssdm_op_BitConcatenate.i96.i32.i32.i32, i32 %resB, i32 %resG, i32 %resR" [seuilCout.c:21->seuilCout.c:133]   --->   Operation 30 'bitconcatenate' 'or_ln21_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%write_ln21 = write void @_ssdm_op_Write.ap_auto.i96P0A, i96 %pixOut, i96 %or_ln21_1" [seuilCout.c:21->seuilCout.c:133]   --->   Operation 31 'write' 'write_ln21' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/2] (10.7ns)   --->   "%call_ret = call i16 @detectCoul, i96 %pixIn_read, i32 %cptR, i32 %cptG, i32 %cptB, i32 %cptPix" [seuilCout.c:135]   --->   Operation 32 'call' 'call_ret' <Predicate = true> <Delay = 10.7> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%resultats_ret = extractvalue i16 %call_ret" [seuilCout.c:135]   --->   Operation 33 'extractvalue' 'resultats_ret' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%write_ln135 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %resultats, i8 %resultats_ret" [seuilCout.c:135]   --->   Operation 34 'write' 'write_ln135' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%valid_ret = extractvalue i16 %call_ret" [seuilCout.c:135]   --->   Operation 35 'extractvalue' 'valid_ret' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%write_ln135 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %valid, i8 %valid_ret" [seuilCout.c:135]   --->   Operation 36 'write' 'write_ln135' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%ret_ln136 = ret" [seuilCout.c:136]   --->   Operation 37 'ret' 'ret_ln136' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 15.000ns, clock uncertainty: 4.050ns.
+
+ <State 1>: 10.096ns
+The critical path consists of the following:
+	wire read operation ('pixIn_read', seuilCout.c:3->seuilCout.c:133) on port 'pixIn' (seuilCout.c:3->seuilCout.c:133) [19]  (0.000 ns)
+	'call' operation 16 bit ('call_ret', seuilCout.c:135) to 'detectCoul' [37]  (10.096 ns)
+
+ <State 2>: 10.722ns
+The critical path consists of the following:
+	'call' operation 16 bit ('call_ret', seuilCout.c:135) to 'detectCoul' [37]  (10.722 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

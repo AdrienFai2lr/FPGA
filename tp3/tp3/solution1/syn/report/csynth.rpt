@@ -1,10 +1,10 @@
 
 
 ================================================================
-== Synthesis Summary Report of 'detectCoul'
+== Synthesis Summary Report of 'traitCoul'
 ================================================================
 + General Information: 
-    * Date:           Fri Mar 28 16:16:27 2025
+    * Date:           Fri Mar 28 16:56:53 2025
     * Version:        2023.2 (Build 4023990 on Oct 11 2023)
     * Project:        tp3
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,12 +15,13 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
-    |    Modules   | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |           |           |     |
-    |    & Loops   | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
-    +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
-    |+ detectCoul  |    II|  0.23|        1|  15.000|         -|        1|     -|       yes|     -|   -|  197 (~0%)|  1466 (2%)|    -|
-    +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    +---------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |    Modules    | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |           |           |     |
+    |    & Loops    | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +---------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ traitCoul    |    II|  0.23|        1|  15.000|         -|        1|     -|       yes|     -|   -|  295 (~0%)|  1804 (3%)|    -|
+    | + detectCoul  |    II|  0.23|        1|  15.000|         -|        1|     -|       yes|     -|   -|  197 (~0%)|  1466 (2%)|    -|
+    +---------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
 
 
 ================================================================
@@ -31,6 +32,7 @@
 | Port      | Mode    | Direction | Bitwidth |
 +-----------+---------+-----------+----------+
 | pixIn     | ap_none | in        | 96       |
+| pixOut    | ap_vld  | out       | 96       |
 | resultats | ap_vld  | out       | 8        |
 | valid     | ap_vld  | out       | 8        |
 +-----------+---------+-----------+----------+
@@ -52,35 +54,39 @@
 +-----------+-----------+----------------+
 | Argument  | Direction | Datatype       |
 +-----------+-----------+----------------+
+| pixIn     | in        | pointer        |
+| pixOut    | out       | pointer        |
 | resultats | out       | unsigned char* |
 | valid     | out       | unsigned char* |
-| pixIn     | in        |                |
 +-----------+-----------+----------------+
 
 * SW-to-HW Mapping
 +-----------+------------------+---------+
 | Argument  | HW Interface     | HW Type |
 +-----------+------------------+---------+
+| pixIn     | pixIn            | port    |
+| pixOut    | pixOut           | port    |
+| pixOut    | pixOut_ap_vld    | port    |
 | resultats | resultats        | port    |
 | resultats | resultats_ap_vld | port    |
 | valid     | valid            | port    |
 | valid     | valid_ap_vld     | port    |
-| pixIn     | pixIn            | port    |
 +-----------+------------------+---------+
 
 
 ================================================================
 == Bind Op Report
 ================================================================
-+----------------------+-----+--------+----------+-----+--------+---------+
-| Name                 | DSP | Pragma | Variable | Op  | Impl   | Latency |
-+----------------------+-----+--------+----------+-----+--------+---------+
-| + detectCoul         | 0   |        |          |     |        |         |
-|   add_ln46_fu_128_p2 |     |        | add_ln46 | add | fabric | 0       |
-|   add_ln50_fu_152_p2 |     |        | add_ln50 | add | fabric | 0       |
-|   add_ln70_fu_608_p2 |     |        | add_ln70 | add | fabric | 0       |
-|   add_ln88_fu_526_p2 |     |        | add_ln88 | add | fabric | 0       |
-+----------------------+-----+--------+----------+-----+--------+---------+
++-----------------------+-----+--------+----------+-----+--------+---------+
+| Name                  | DSP | Pragma | Variable | Op  | Impl   | Latency |
++-----------------------+-----+--------+----------+-----+--------+---------+
+| + traitCoul           | 0   |        |          |     |        |         |
+|  + detectCoul         | 0   |        |          |     |        |         |
+|    add_ln46_fu_100_p2 |     |        | add_ln46 | add | fabric | 0       |
+|    add_ln50_fu_124_p2 |     |        | add_ln50 | add | fabric | 0       |
+|    add_ln70_fu_580_p2 |     |        | add_ln70 | add | fabric | 0       |
+|    add_ln88_fu_498_p2 |     |        | add_ln88 | add | fabric | 0       |
++-----------------------+-----+--------+----------+-----+--------+---------+
 
 
 ================================================================
@@ -95,7 +101,8 @@
 +----------+---------+----------------------------------------------+
 | Type     | Options | Location                                     |
 +----------+---------+----------------------------------------------+
-| pipeline |         | tp3/solution1/directives.tcl:8 in detectcoul |
+| pipeline |         | tp3/solution1/directives.tcl:7 in detectcoul |
+| pipeline |         | tp3/solution1/directives.tcl:9 in traitcoul  |
 +----------+---------+----------------------------------------------+
 
 

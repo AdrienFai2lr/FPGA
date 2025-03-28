@@ -1,18 +1,23 @@
 <root versionMajor = "1" versionMinor = "5">
-  <kernel src_name="detectCoul" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+  <kernel src_name="traitCoul" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
-      <arg id="0" access_type="w" src_name="resultats" src_type="unsigned char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+      <arg id="0" access_type="r" src_name="pixIn" src_type="*" src_isptr="1" src_bitwidth="96" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="pixIn" hw_bitwidth="96" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="w" src_name="pixOut" src_type="*" src_isptr="1" src_bitwidth="96" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="pixOut" hw_bitwidth="96" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="w" src_name="resultats" src_type="unsigned char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="resultats" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="1" access_type="w" src_name="valid" src_type="unsigned char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+      <arg id="3" access_type="w" src_name="valid" src_type="unsigned char*" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="valid" hw_bitwidth="8" hw_size_or_depth="1" hw_kernel_support="false">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-      </arg>
-      <arg id="2" access_type="r" src_name="pixIn" src_type="" src_isptr="1" src_bitwidth="96" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="pixIn" hw_bitwidth="96" hw_size_or_depth="1" hw_kernel_support="false">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>

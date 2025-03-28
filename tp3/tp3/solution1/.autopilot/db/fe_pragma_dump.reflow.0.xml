@@ -1,3 +1,4 @@
 <pragmas>
-<pragma file="seuilCout.c" line="8" pragmaType="pipeline" parentfunction="detectCoul" off="0" ii="-1" style=""/>
+<pragma file="seuilCout.c" line="7" pragmaType="pipeline" parentfunction="detectCoul" off="0" ii="-1" style=""/>
+<pragma file="seuilCout.c" line="9" pragmaType="pipeline" parentfunction="traitCoul" off="0" ii="-1" style=""/>
 </pragmas>

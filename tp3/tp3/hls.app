@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="tp3" top="detectCoul" projectType="C/C++">
+<project xmlns="com.autoesl.autopilot.project" name="tp3" top="traitCoul" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

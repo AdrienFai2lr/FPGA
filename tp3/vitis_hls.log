@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'adrien.failler' on host '22hp020.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Fri Mar 28 16:16:18 CET 2025
+INFO: [HLS 200-10] For user 'adrien.failler' on host '22hp020.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Fri Mar 28 16:56:44 CET 2025
 INFO: [HLS 200-10] On os Debian GNU/Linux 12 (bookworm)
 INFO: [HLS 200-10] In directory '/home/etudiants/master1/adrien.failler/FPGA/tp3'
 INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
@@ -7,7 +7,7 @@ Sourcing Tcl script '/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solutio
 INFO: [HLS 200-1510] Running: source /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csynth.tcl
 INFO: [HLS 200-1510] Running: open_project tp3 
 INFO: [HLS 200-10] Opening project '/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3'.
-INFO: [HLS 200-1510] Running: set_top detectCoul 
+INFO: [HLS 200-1510] Running: set_top traitCoul 
 INFO: [HLS 200-1510] Running: add_files seuilCout.c 
 INFO: [HLS 200-10] Adding design file 'seuilCout.c' to the project
 INFO: [HLS 200-1510] Running: add_files seuilCout.h 
@@ -23,40 +23,44 @@ Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/top
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
 INFO: [HLS 200-1510] Running: create_clock -period 15 -name default 
 INFO: [HLS 200-1510] Running: source ./tp3/solution1/directives.tcl
-INFO: [HLS 200-1510] Running: set_directive_top -name detectCoul detectCoul 
 INFO: [HLS 200-1510] Running: set_directive_pipeline detectCoul 
+INFO: [HLS 200-1510] Running: set_directive_top -name traitCoul traitCoul 
+INFO: [HLS 200-1510] Running: set_directive_pipeline traitCoul 
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 312.855 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 287.105 MB.
 INFO: [HLS 200-10] Analyzing design file 'seuilCout.c' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.18 seconds. CPU system time: 0.14 seconds. Elapsed time: 0.4 seconds; current allocated memory: 313.809 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.21 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.45 seconds; current allocated memory: 288.027 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 172 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 166 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 144 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 141 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 147 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 149 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.64 seconds. CPU system time: 0.16 seconds. Elapsed time: 6.9 seconds; current allocated memory: 315.613 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 315.613 MB.
+INFO: [HLS 200-1995] There were 207 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 206 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 175 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 177 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 168 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 168 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 168 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 196 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 192 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 192 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 179 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 179 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 179 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 188 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 192 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'seuilCout' into 'traitCoul' (seuilCout.c:131:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'pixOut' with compact=bit mode in 96-bits (seuilCout.c:131:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'pixIn' with compact=bit mode in 96-bits (seuilCout.c:131:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.77 seconds. CPU system time: 0.21 seconds. Elapsed time: 7.01 seconds; current allocated memory: 290.938 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 290.938 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 316.211 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 291.188 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 316.293 MB.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:8:9) in function 'detectCoul'... converting 21 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 337.613 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 337.613 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 291.230 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (seuilCout.c:28:28) in function 'detectCoul'... converting 21 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 312.656 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 313.168 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'detectCoul' ...
+INFO: [HLS 200-10] Synthesizing 'traitCoul' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'detectCoul' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -64,31 +68,52 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'detectCoul'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, function 'detectCoul'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 337.613 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 315.168 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 337.613 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 315.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'traitCoul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'traitCoul'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, function 'traitCoul'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 315.168 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 315.293 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'detectCoul' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'detectCoul/resultats' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'detectCoul/valid' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'detectCoul/pixIn' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'detectCoul' to 'ap_ctrl_hs'.
 WARNING: [RTGEN 206-101] Register 'cptR' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'cptG' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'cptB' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'cptPix' is power-on initialization.
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'detectCoul' pipeline 'detectCoul' pipeline type 'function pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'detectCoul'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 337.613 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 337.613 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 345.211 MB.
-INFO: [VHDL 208-304] Generating VHDL RTL for detectCoul.
-INFO: [VLOG 209-307] Generating Verilog RTL for detectCoul.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 315.629 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'traitCoul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'traitCoul/pixIn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'traitCoul/pixOut' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'traitCoul/resultats' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'traitCoul/valid' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'traitCoul' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'traitCoul' pipeline 'traitCoul' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'traitCoul'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 318.684 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 323.789 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.17 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.23 seconds; current allocated memory: 331.773 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for traitCoul.
+INFO: [VLOG 209-307] Generating Verilog RTL for traitCoul.
 INFO: [HLS 200-789] **** Estimated Fmax: 93.27 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2.38 seconds. CPU system time: 0.36 seconds. Elapsed time: 8.28 seconds; current allocated memory: 32.902 MB.
-INFO: [HLS 200-112] Total CPU user time: 3.82 seconds. Total CPU system time: 0.47 seconds. Total elapsed time: 9.79 seconds; peak allocated memory: 345.211 MB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2.7 seconds. CPU system time: 0.42 seconds. Elapsed time: 8.79 seconds; current allocated memory: 45.215 MB.
+INFO: [HLS 200-112] Total CPU user time: 4.24 seconds. Total CPU system time: 0.57 seconds. Total elapsed time: 10.42 seconds; peak allocated memory: 331.773 MB.

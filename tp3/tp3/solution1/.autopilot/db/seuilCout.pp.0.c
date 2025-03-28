@@ -157,7 +157,9 @@ typedef struct{
 
 void seuilCout(pixelType *pixOut,pixelType pixIn);
 
-__attribute__((sdx_kernel("detectCoul", 0))) void detectCoul(detectType *res, validType *valid, pixelType pixIn);
+void detectCoul(detectType *res, validType *valid, pixelType pixIn);
+
+__attribute__((sdx_kernel("traitCoul", 0))) void traitCoul(pixelType *pixIn, pixelType *pixOut, detectType *resultats, validType *valid);
 # 2 "seuilCout.c" 2
 
 void seuilCout(pixelType *pixOut,pixelType pixIn){
@@ -183,16 +185,8 @@ void seuilCout(pixelType *pixOut,pixelType pixIn){
 
 }
 
-__attribute__((sdx_kernel("detectCoul", 0))) void detectCoul(detectType *resultats, validType *valid, pixelType pixIn){
-#line 16 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csynth.tcl"
-#pragma HLSDIRECTIVE TOP name=detectCoul
-# 26 "seuilCout.c"
-
+void detectCoul(detectType *resultats, validType *valid, pixelType pixIn){
 #line 7 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl"
-#pragma HLSDIRECTIVE TOP name=detectCoul
-# 26 "seuilCout.c"
-
-#line 8 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl"
 #pragma HLSDIRECTIVE PIPELINE
 # 26 "seuilCout.c"
 
@@ -296,4 +290,25 @@ __attribute__((sdx_kernel("detectCoul", 0))) void detectCoul(detectType *resulta
         cptG = 0;
         cptR = 0;
     }
+}
+
+
+
+__attribute__((sdx_kernel("traitCoul", 0))) void traitCoul(pixelType *pixIn, pixelType *pixOut, detectType *resultats, validType *valid) {
+#line 16 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csynth.tcl"
+#pragma HLSDIRECTIVE TOP name=traitCoul
+# 131 "seuilCout.c"
+
+#line 8 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl"
+#pragma HLSDIRECTIVE TOP name=traitCoul
+# 131 "seuilCout.c"
+
+#line 9 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl"
+#pragma HLSDIRECTIVE PIPELINE
+# 131 "seuilCout.c"
+
+
+    seuilCout(pixOut, *pixIn);
+
+    detectCoul(resultats, valid, *pixIn);
 }

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1743177413624">
+  <ports id="1" name="pixIn" type="PortType" coreId="1869635878" bitwidth="96">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="pixOut" type="PortType" coreId="576533817" bitwidth="96" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="3" name="resultats" type="PortType" originalName="resultats" coreId="1869422706" bitwidth="8" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="4" name="valid" type="PortType" originalName="valid" coreId="1701519394" bitwidth="8" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="46" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="47" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="50" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="56" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="61" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="62" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="64" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="65" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="67" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="70" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="71" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="72" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="73" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="74" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="75" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="76" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="77" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="79" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="80" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="82" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="84" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
+  <edges id="85" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
+  <edges id="86" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="88" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="91" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="92" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="93" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="96" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@ports.1"/>
+  <edges id="97" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="100" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="101" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="104" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@ports.2"/>
+  <edges id="105" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="106" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="108" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@ports.3"/>
+  <edges id="109" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="110" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="111" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="112" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="113" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="129" pipe_depth="2" RegionName="traitCoul">
+    <basic_blocks id="43" name="traitCoul" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="pixIn_read" lineNumber="3" fileName="seuilCout.c" fileDirectory="../." coreId="0" contextFuncName="seuilCout" bitwidth="96" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="3" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>pixIn</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="valR" lineNumber="3" originalName="pixIn" fileName="seuilCout.c" fileDirectory="../." rtlName="valR_fu_95_p1" coreId="0" contextFuncName="seuilCout" bitwidth="32" opcode="trunc" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="3" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="valG" lineNumber="3" originalName="pixIn" fileName="seuilCout.c" fileDirectory="../." rtlName="valG_reg_212" coreId="0" contextFuncName="seuilCout" bitwidth="32" opcode="partselect" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="3" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="valB" lineNumber="3" originalName="pixIn" fileName="seuilCout.c" fileDirectory="../." rtlName="valB_reg_221" coreId="0" contextFuncName="seuilCout" bitwidth="32" opcode="partselect" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="3" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="icmp_ln15" lineNumber="15" fileName="seuilCout.c" fileDirectory="../." rtlName="icmp_ln15_fu_119_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="seuilCout" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="15" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="icmp_ln15_1" lineNumber="15" fileName="seuilCout.c" fileDirectory="../." rtlName="icmp_ln15_1_fu_123_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="seuilCout" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="15" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="or_ln15" lineNumber="15" fileName="seuilCout.c" fileDirectory="../." rtlName="or_ln15_fu_127_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="seuilCout" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="15" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="resR" lineNumber="15" originalName="resR" fileName="seuilCout.c" fileDirectory="../." rtlName="resR_fu_133_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="seuilCout" bitwidth="32" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="9" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="15" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="icmp_ln16" lineNumber="16" fileName="seuilCout.c" fileDirectory="../." rtlName="icmp_ln16_fu_140_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="seuilCout" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="16" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="icmp_ln16_1" lineNumber="16" fileName="seuilCout.c" fileDirectory="../." rtlName="icmp_ln16_1_fu_144_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="seuilCout" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="16" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="or_ln16" lineNumber="16" fileName="seuilCout.c" fileDirectory="../." rtlName="or_ln16_fu_148_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="seuilCout" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="16" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="resG" lineNumber="16" originalName="resG" fileName="seuilCout.c" fileDirectory="../." rtlName="resG_fu_154_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="seuilCout" bitwidth="32" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="13" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="16" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="icmp_ln17" lineNumber="17" fileName="seuilCout.c" fileDirectory="../." rtlName="icmp_ln17_fu_161_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="seuilCout" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="17" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="icmp_ln17_1" lineNumber="17" fileName="seuilCout.c" fileDirectory="../." rtlName="icmp_ln17_1_fu_165_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="seuilCout" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="17" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="or_ln17" lineNumber="17" fileName="seuilCout.c" fileDirectory="../." rtlName="or_ln17_fu_169_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="seuilCout" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="17" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="resB" lineNumber="17" originalName="resB" fileName="seuilCout.c" fileDirectory="../." rtlName="resB_fu_175_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="seuilCout" bitwidth="32" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.97" m_topoIndex="17" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="17" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="or_ln21_1" lineNumber="21" fileName="seuilCout.c" fileDirectory="../." rtlName="pixOut" coreId="1230982482" contextFuncName="seuilCout" bitwidth="96" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="21" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="pixOut_write_ln21" lineNumber="21" fileName="seuilCout.c" fileDirectory="../." coreId="808464928" contextFuncName="seuilCout" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="133" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <inlineStackInfo fileName="seuilCout.c" linenumber="21" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3" functionName="seuilCout"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>pixOut</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="call_ret" lineNumber="135" fileName="seuilCout.c" fileDirectory="../." rtlName="grp_detectCoul_fu_81" coreId="1713399662" bitwidth="16" opcode="call" nodeLatency="1" m_display="0" m_delay="10.0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="135" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <constName>detectCoul</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="resultats_ret" lineNumber="135" fileName="seuilCout.c" fileDirectory="../." coreId="536882734" bitwidth="8" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="135" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="resultats_write_ln135" lineNumber="135" fileName="seuilCout.c" fileDirectory="../." coreId="1869182069" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="135" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>resultats</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="valid_ret" lineNumber="135" fileName="seuilCout.c" fileDirectory="../." coreId="6645601" bitwidth="8" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="135" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="valid_write_ln135" lineNumber="135" fileName="seuilCout.c" fileDirectory="../." coreId="1702258035" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="135" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>valid</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="_ln136" lineNumber="136" fileName="seuilCout.c" fileDirectory="../." coreId="440" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="seuilCout.c" linenumber="136" fileDirectory="/home/etudiants/master1/adrien.failler/FPGA/tp3"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="seuilCout.c">
+        <validLinenumbers>3</validLinenumbers>
+        <validLinenumbers>15</validLinenumbers>
+        <validLinenumbers>16</validLinenumbers>
+        <validLinenumbers>17</validLinenumbers>
+        <validLinenumbers>21</validLinenumbers>
+        <validLinenumbers>135</validLinenumbers>
+        <validLinenumbers>136</validLinenumbers>
+        <validLinenumbers>133</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <regnodes realName="valR_reg_203">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="valG_reg_212">
+    <nodeIds>21</nodeIds>
+  </regnodes>
+  <regnodes realName="valB_reg_221">
+    <nodeIds>22</nodeIds>
+  </regnodes>
+  <expressionNodes realName="resultats_ret_fu_193">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="resR_fu_133">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="resG_fu_154">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="valG_fu_99">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="valR_fu_95">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="valid_ret_fu_198">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln16_fu_140">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln17_fu_161">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="resB_fu_175">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln16_fu_148">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln16_1_fu_144">
+    <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="valB_fu_109">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln15_fu_127">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln17_fu_169">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln17_1_fu_165">
+    <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln15_fu_119">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln15_1_fu_123">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln21_1_fu_182">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_detectCoul_fu_81">
+    <nodeIds>37</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="pixIn_read_read_fu_54">
+    <nodeIds>19</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln135_write_fu_74">
+    <nodeIds>41</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln21_write_fu_60">
+    <nodeIds>36</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln135_write_fu_67">
+    <nodeIds>39</nodeIds>
+  </ioNodes>
+  <ioPorts name="pixIn">
+    <contents name="read">
+      <nodeIds>19</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="pixOut">
+    <contents name="write">
+      <nodeIds>36</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="resultats">
+    <contents name="write">
+      <nodeIds>39</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="valid">
+    <contents name="write">
+      <nodeIds>41</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="37" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="2"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="traitCoul" mII="1" mDepth="2" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1" mMaxLatency="1">
+      <basicBlocks>43</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -7,13 +7,7 @@
     "insert_position": "",
     "label": "",
     "pragma": {
-      "name": "TOP",
-      "option": [
-        {
-          "name": "name",
-          "value": "detectCoul"
-        }
-      ]
+      "name": "PIPELINE"
     },
     "slx": false,
     "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl",
@@ -22,23 +16,8 @@
   },
   {
     "functionLabel": "",
-    "functionName": "detectCoul",
+    "functionName": "traitCoul",
     "id": 1,
-    "ifcond": "",
-    "insert_position": "",
-    "label": "",
-    "pragma": {
-      "name": "PIPELINE"
-    },
-    "slx": false,
-    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl",
-    "sourceLine": 8,
-    "success": true
-  },
-  {
-    "functionLabel": "",
-    "functionName": "detectCoul",
-    "id": 2,
     "ifcond": "",
     "insert_position": "",
     "label": "",
@@ -47,7 +26,43 @@
       "option": [
         {
           "name": "name",
-          "value": "detectCoul"
+          "value": "traitCoul"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl",
+    "sourceLine": 8,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "traitCoul",
+    "id": 2,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl",
+    "sourceLine": 9,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "traitCoul",
+    "id": 3,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "traitCoul"
         }
       ]
     },

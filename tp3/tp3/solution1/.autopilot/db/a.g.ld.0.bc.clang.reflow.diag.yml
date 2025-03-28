@@ -1,0 +1,46 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: seuilCout.c, Line: 131, Column: 0 }
+Function:        traitCoul
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          seuilCout
+    DebugLoc:        { File: seuilCout.c, Line: 3, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          traitCoul
+    DebugLoc:        { File: seuilCout.c, Line: 131, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: seuilCout.c, Line: 131, Column: 0 }
+Function:        traitCoul
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        scalar
+  - String:          ' variable '''
+  - Name:            pixOut
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '96'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: seuilCout.c, Line: 131, Column: 0 }
+Function:        traitCoul
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        scalar
+  - String:          ' variable '''
+  - Name:            pixIn
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '96'
+  - String:          '-bits'
+...

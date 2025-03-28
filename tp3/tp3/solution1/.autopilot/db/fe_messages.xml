@@ -1,12 +1,24 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csynth.tcl:16:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="detectCoul" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=detectCoul" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:7:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="detectCoul" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=detectCoul" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="detectCoul" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csynth.tcl:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="traitCoul" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=traitCoul" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:8:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="detectCoul" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="traitCoul" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=traitCoul" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="traitCoul" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="seuilCout.c:131:0" msg_body="Inlining function 'seuilCout' into 'traitCoul'">
+        <args Callee="seuilCout" Callee-DebugLoc="File seuilCout.c Line 3 Column 0" Caller="traitCoul" Caller-DebugLoc="File seuilCout.c Line 131 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="seuilCout.c:131:0" msg_body="Aggregating scalar variable 'pixOut' with compact=bit mode in 96-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="96" HwTyName="scalar" Name="pixOut"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="seuilCout.c:131:0" msg_body="Aggregating scalar variable 'pixIn' with compact=bit mode in 96-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="96" HwTyName="scalar" Name="pixIn"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

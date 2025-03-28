@@ -6,10 +6,12 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("ap_done", 1, hls_out, -1, "", "", 1),
 	Port_Property("ap_idle", 1, hls_out, -1, "", "", 1),
 	Port_Property("ap_ready", 1, hls_out, -1, "", "", 1),
-	Port_Property("resultats", 8, hls_out, 0, "ap_vld", "out_data", 1),
-	Port_Property("resultats_ap_vld", 1, hls_out, 0, "ap_vld", "out_vld", 1),
-	Port_Property("valid", 8, hls_out, 1, "ap_vld", "out_data", 1),
-	Port_Property("valid_ap_vld", 1, hls_out, 1, "ap_vld", "out_vld", 1),
-	Port_Property("pixIn", 96, hls_in, 2, "ap_none", "in_data", 1),
+	Port_Property("pixIn", 96, hls_in, 0, "ap_none", "in_data", 1),
+	Port_Property("pixOut", 96, hls_out, 1, "ap_vld", "out_data", 1),
+	Port_Property("pixOut_ap_vld", 1, hls_out, 1, "ap_vld", "out_vld", 1),
+	Port_Property("resultats", 8, hls_out, 2, "ap_vld", "out_data", 1),
+	Port_Property("resultats_ap_vld", 1, hls_out, 2, "ap_vld", "out_vld", 1),
+	Port_Property("valid", 8, hls_out, 3, "ap_vld", "out_data", 1),
+	Port_Property("valid_ap_vld", 1, hls_out, 3, "ap_vld", "out_vld", 1),
 };
-const char* HLS_Design_Meta::dut_name = "detectCoul";
+const char* HLS_Design_Meta::dut_name = "traitCoul";

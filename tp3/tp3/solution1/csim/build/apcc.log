@@ -1,7 +1,7 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'adrien.failler' on host '22hp020.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Fri Mar 28 16:08:44 CET 2025
+INFO: [HLS 200-10] For user 'adrien.failler' on host '22hp020.univ-brest.fr' (Linux_x86_64 version 6.1.0-18-amd64) on Fri Mar 28 16:46:23 CET 2025
 INFO: [HLS 200-10] On os Debian GNU/Linux 12 (bookworm)
 INFO: [HLS 200-10] In directory '/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csim/build/apcc_db_adrien.failler/67601743174524851025
+INFO: [APCC 202-3] Tmp directory is /home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/csim/build/apcc_db_adrien.failler/144151743176783770001
 INFO: [APCC 202-1] APCC is done.
-INFO: [HLS 200-112] Total CPU user time: 1.44 seconds. Total CPU system time: 0.11 seconds. Total elapsed time: 1.53 seconds; peak allocated memory: 99.625 MB.
+INFO: [HLS 200-112] Total CPU user time: 1.46 seconds. Total CPU system time: 0.1 seconds. Total elapsed time: 1.5 seconds; peak allocated memory: 99.625 MB.

@@ -1,5 +1,5 @@
 set moduleName detectCoul
-set isTopModule 1
+set isTopModule 0
 set isCombinational 0
 set isDatapathOnly 0
 set isPipelined 1
@@ -13,20 +13,17 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set C_modelName {detectCoul}
-set C_modelType { void 0 }
+set C_modelType { int 16 }
 set C_modelArgList {
-	{ resultats int 8 regular {pointer 1}  }
-	{ valid int 8 regular {pointer 1}  }
-	{ pixIn int 96 regular  }
+	{ pixIn_val int 96 regular  }
 }
 set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
-	{ "Name" : "resultats", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "valid", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "pixIn", "interface" : "wire", "bitwidth" : 96, "direction" : "READONLY"} ]}
+	{ "Name" : "pixIn_val", "interface" : "wire", "bitwidth" : 96, "direction" : "READONLY"} , 
+ 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 16} ]}
 # RTL Port declarations: 
-set portNum 11
+set portNum 9
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -34,11 +31,9 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ resultats sc_out sc_lv 8 signal 0 } 
-	{ resultats_ap_vld sc_out sc_logic 1 outvld 0 } 
-	{ valid sc_out sc_lv 8 signal 1 } 
-	{ valid_ap_vld sc_out sc_logic 1 outvld 1 } 
-	{ pixIn sc_in sc_lv 96 signal 2 } 
+	{ pixIn_val sc_in sc_lv 96 signal 0 } 
+	{ ap_return_0 sc_out sc_lv 8 signal -1 } 
+	{ ap_return_1 sc_out sc_lv 8 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -47,11 +42,9 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "resultats", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "resultats", "role": "default" }} , 
- 	{ "name": "resultats_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "resultats", "role": "ap_vld" }} , 
- 	{ "name": "valid", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "valid", "role": "default" }} , 
- 	{ "name": "valid_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "valid", "role": "ap_vld" }} , 
- 	{ "name": "pixIn", "direction": "in", "datatype": "sc_lv", "bitwidth":96, "type": "signal", "bundle":{"name": "pixIn", "role": "default" }}  ]}
+ 	{ "name": "pixIn_val", "direction": "in", "datatype": "sc_lv", "bitwidth":96, "type": "signal", "bundle":{"name": "pixIn_val", "role": "default" }} , 
+ 	{ "name": "ap_return_0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "ap_return_0", "role": "default" }} , 
+ 	{ "name": "ap_return_1", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "ap_return_1", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -69,9 +62,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "resultats", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "valid", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "pixIn", "Type" : "None", "Direction" : "I"},
+			{"Name" : "pixIn_val", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cptR", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "cptG", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "cptB", "Type" : "OVld", "Direction" : "IO"},
@@ -80,9 +71,7 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	detectCoul {
-		resultats {Type O LastRead -1 FirstWrite 1}
-		valid {Type O LastRead -1 FirstWrite 1}
-		pixIn {Type I LastRead 0 FirstWrite -1}
+		pixIn_val {Type I LastRead 0 FirstWrite -1}
 		cptR {Type IO LastRead -1 FirstWrite -1}
 		cptG {Type IO LastRead -1 FirstWrite -1}
 		cptB {Type IO LastRead -1 FirstWrite -1}
@@ -100,25 +89,5 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	resultats { ap_vld {  { resultats out_data 1 8 }  { resultats_ap_vld out_vld 1 1 } } }
-	valid { ap_vld {  { valid out_data 1 8 }  { valid_ap_vld out_vld 1 1 } } }
-	pixIn { ap_none {  { pixIn in_data 0 96 } } }
-}
-
-set maxi_interface_dict [dict create]
-
-# RTL port scheduling information:
-set fifoSchedulingInfoList { 
-}
-
-# RTL bus port read request latency information:
-set busReadReqLatencyList { 
-}
-
-# RTL bus port write response latency information:
-set busWriteResLatencyList { 
-}
-
-# RTL array port load latency information:
-set memoryLoadLatencyList { 
+	pixIn_val { ap_none {  { pixIn_val in_data 0 96 } } }
 }
