@@ -28,6 +28,21 @@
     "insert_position": "",
     "label": "",
     "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl",
+    "sourceLine": 8,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "detectCoul",
+    "id": 2,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
       "name": "TOP",
       "option": [
         {

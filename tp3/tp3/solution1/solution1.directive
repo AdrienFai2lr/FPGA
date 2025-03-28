@@ -5,6 +5,14 @@
                 <option name="name" value="detectCoul"/>
             </pragma>
         </directive>
+        <directive functionName="detectCoul" label="" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="detectCoul" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="detectCoul"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

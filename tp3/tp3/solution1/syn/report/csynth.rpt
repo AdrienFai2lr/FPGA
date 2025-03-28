@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'detectCoul'
 ================================================================
 + General Information: 
-    * Date:           Mon Mar 17 17:24:17 2025
+    * Date:           Fri Mar 28 16:16:27 2025
     * Version:        2023.2 (Build 4023990 on Oct 11 2023)
     * Project:        tp3
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -19,7 +19,7 @@
     |    Modules   | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |           |           |     |
     |    & Loops   | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
     +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
-    |+ detectCoul  |     -|  0.23|        1|  15.000|         -|        2|     -|        no|     -|   -|  198 (~0%)|  1478 (2%)|    -|
+    |+ detectCoul  |    II|  0.23|        1|  15.000|         -|        1|     -|       yes|     -|   -|  197 (~0%)|  1466 (2%)|    -|
     +--------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+-----------+-----+
 
 
@@ -76,10 +76,10 @@
 | Name                 | DSP | Pragma | Variable | Op  | Impl   | Latency |
 +----------------------+-----+--------+----------+-----+--------+---------+
 | + detectCoul         | 0   |        |          |     |        |         |
-|   add_ln46_fu_126_p2 |     |        | add_ln46 | add | fabric | 0       |
-|   add_ln50_fu_150_p2 |     |        | add_ln50 | add | fabric | 0       |
-|   add_ln70_fu_523_p2 |     |        | add_ln70 | add | fabric | 0       |
-|   add_ln88_fu_540_p2 |     |        | add_ln88 | add | fabric | 0       |
+|   add_ln46_fu_128_p2 |     |        | add_ln46 | add | fabric | 0       |
+|   add_ln50_fu_152_p2 |     |        | add_ln50 | add | fabric | 0       |
+|   add_ln70_fu_608_p2 |     |        | add_ln70 | add | fabric | 0       |
+|   add_ln88_fu_526_p2 |     |        | add_ln88 | add | fabric | 0       |
 +----------------------+-----+--------+----------+-----+--------+---------+
 
 
@@ -91,5 +91,11 @@
 ================================================================
 == Pragma Report
 ================================================================
-  No pragmas found
+* Valid Pragma Syntax
++----------+---------+----------------------------------------------+
+| Type     | Options | Location                                     |
++----------+---------+----------------------------------------------+
+| pipeline |         | tp3/solution1/directives.tcl:8 in detectcoul |
++----------+---------+----------------------------------------------+
+
 

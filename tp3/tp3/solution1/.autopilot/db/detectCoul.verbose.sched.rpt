@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'detectCoul'
 ================================================================
-* Date:           Mon Mar 17 17:24:16 2025
+* Date:           Fri Mar 28 16:16:27 2025
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        tp3
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
     |   min   |   max   |    min    |    max    | min | max |   Type  |
     +---------+---------+-----------+-----------+-----+-----+---------+
-    |        1|        1|  15.000 ns|  15.000 ns|    2|    2|       no|
+    |        1|        1|  15.000 ns|  15.000 ns|    1|    1|      yes|
     +---------+---------+-----------+-----------+-----+-----+---------+
 
     + Detail: 
@@ -52,21 +52,25 @@ ResetActiveHigh: 1
 IsCombinational: 0
 IsDatapathOnly: 0
 HasWiredReturn: 1
-HasMFsm: 0
-HasVarLatency: 1
-IsPipeline: 0
-IsRtlPipelined: 0
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
 IsInstanceOverlapped: 0
 IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
 * Number of FSM states : 2
-* Pipeline : 0
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
@@ -75,7 +79,7 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 9.39>
+State 1 <SV = 0> <Delay = 10.0>
 ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%pixIn_read = read i96 @_ssdm_op_Read.ap_auto.i96, i96 %pixIn"   --->   Operation 3 'read' 'pixIn_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%pixIn_r = trunc i96 %pixIn_read"   --->   Operation 4 'trunc' 'pixIn_r' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%pixIn_g = partselect i32 @_ssdm_op_PartSelect.i32.i96.i32.i32, i96 %pixIn_read, i32 32, i32 63"   --->   Operation 5 'partselect' 'pixIn_g' <Predicate = true> <Delay = 0.00>
@@ -147,79 +151,80 @@ ST_1 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node or_ln77_8)   
 ST_1 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node or_ln77_8)   --->   "%xor_ln52_2 = xor i1 %and_ln52_1, i1 1" [seuilCout.c:52]   --->   Operation 71 'xor' 'xor_ln52_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node or_ln77_8)   --->   "%and_ln77_6 = and i1 %or_ln77_7, i1 %xor_ln52_2" [seuilCout.c:77]   --->   Operation 72 'and' 'and_ln77_6' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 73 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln77_8 = or i1 %or_ln48, i1 %and_ln77_6" [seuilCout.c:77]   --->   Operation 73 'or' 'or_ln77_8' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node or_ln120_2)   --->   "%xor_ln77_3 = xor i1 %or_ln77_8, i1 1" [seuilCout.c:77]   --->   Operation 74 'xor' 'xor_ln77_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%cptPix_load = load i32 %cptPix" [seuilCout.c:88]   --->   Operation 75 'load' 'cptPix_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (2.55ns)   --->   "%add_ln88 = add i32 %cptPix_load, i32 1" [seuilCout.c:88]   --->   Operation 76 'add' 'add_ln88' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 77 [1/1] (2.55ns)   --->   "%icmp_ln120 = icmp_eq  i32 %add_ln88, i32 107200" [seuilCout.c:120]   --->   Operation 77 'icmp' 'icmp_ln120' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node or_ln120)   --->   "%or_ln120_3 = or i1 %and_ln77_2, i1 %icmp_ln120" [seuilCout.c:120]   --->   Operation 78 'or' 'or_ln120_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 79 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln120 = or i1 %or_ln120_3, i1 %and_ln44" [seuilCout.c:120]   --->   Operation 79 'or' 'or_ln120' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 80 [1/1] (0.69ns)   --->   "%select_ln120 = select i1 %icmp_ln120, i32 0, i32 %select_ln77" [seuilCout.c:120]   --->   Operation 80 'select' 'select_ln120' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 81 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln120_1 = or i1 %icmp_ln120, i1 %xor_ln77_1" [seuilCout.c:120]   --->   Operation 81 'or' 'or_ln120_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 82 [1/1] (0.69ns)   --->   "%select_ln120_1 = select i1 %icmp_ln120, i32 0, i32 %select_ln77_1" [seuilCout.c:120]   --->   Operation 82 'select' 'select_ln120_1' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 83 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln120_2 = or i1 %icmp_ln120, i1 %xor_ln77_3" [seuilCout.c:120]   --->   Operation 83 'or' 'or_ln120_2' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 84 [1/1] (0.69ns)   --->   "%select_ln120_3 = select i1 %icmp_ln120, i32 0, i32 %add_ln88" [seuilCout.c:120]   --->   Operation 84 'select' 'select_ln120_3' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%store_ln88 = store i32 %select_ln120_3, i32 %cptPix" [seuilCout.c:88]   --->   Operation 85 'store' 'store_ln88' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln120 = br i1 %or_ln120_2, void %if.end88.new4, void %mergeST3" [seuilCout.c:120]   --->   Operation 86 'br' 'br_ln120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%br_ln120 = br i1 %or_ln120_1, void %if.end88.new2, void %mergeST1" [seuilCout.c:120]   --->   Operation 87 'br' 'br_ln120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%store_ln50 = store i32 %select_ln120_1, i32 %cptG" [seuilCout.c:50]   --->   Operation 88 'store' 'store_ln50' <Predicate = (or_ln120_1)> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end88.new2"   --->   Operation 89 'br' 'br_ln0' <Predicate = (or_ln120_1)> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%br_ln120 = br i1 %or_ln120, void %if.end88.new, void %mergeST" [seuilCout.c:120]   --->   Operation 90 'br' 'br_ln120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%store_ln46 = store i32 %select_ln120, i32 %cptR" [seuilCout.c:46]   --->   Operation 91 'store' 'store_ln46' <Predicate = (or_ln120)> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end88.new"   --->   Operation 92 'br' 'br_ln0' <Predicate = (or_ln120)> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 10.7>
-ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%spectopmodule_ln26 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [seuilCout.c:26]   --->   Operation 74 'spectopmodule' 'spectopmodule_ln26' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %resultats"   --->   Operation 75 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %resultats, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 76 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %valid"   --->   Operation 77 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %valid, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 78 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i96 %pixIn"   --->   Operation 79 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %pixIn, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 80 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%cptB_load = load i32 %cptB" [seuilCout.c:54]   --->   Operation 81 'load' 'cptB_load' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node or_ln120_2)   --->   "%xor_ln77_3 = xor i1 %or_ln77_8, i1 1" [seuilCout.c:77]   --->   Operation 82 'xor' 'xor_ln77_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 83 [1/1] (2.55ns)   --->   "%add_ln70 = add i32 %cptB_load, i32 1" [seuilCout.c:70]   --->   Operation 83 'add' 'add_ln70' <Predicate = (!or_ln77_8)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 84 [1/1] (0.69ns)   --->   "%select_ln77_2 = select i1 %or_ln77_8, i32 %cptB_load, i32 %add_ln70" [seuilCout.c:77]   --->   Operation 84 'select' 'select_ln77_2' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%cptPix_load = load i32 %cptPix" [seuilCout.c:88]   --->   Operation 85 'load' 'cptPix_load' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 86 [1/1] (2.55ns)   --->   "%add_ln88 = add i32 %cptPix_load, i32 1" [seuilCout.c:88]   --->   Operation 86 'add' 'add_ln88' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 87 [1/1] (2.55ns)   --->   "%icmp_ln90 = icmp_sgt  i32 %select_ln77, i32 %select_ln77_1" [seuilCout.c:90]   --->   Operation 87 'icmp' 'icmp_ln90' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 88 [1/1] (2.55ns)   --->   "%icmp_ln90_1 = icmp_sgt  i32 %select_ln77, i32 %select_ln77_2" [seuilCout.c:90]   --->   Operation 88 'icmp' 'icmp_ln90_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 89 [1/1] (0.97ns)   --->   "%and_ln90 = and i1 %icmp_ln90, i1 %icmp_ln90_1" [seuilCout.c:90]   --->   Operation 89 'and' 'and_ln90' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 90 [1/1] (2.55ns)   --->   "%icmp_ln94 = icmp_sgt  i32 %select_ln77_1, i32 %select_ln77" [seuilCout.c:94]   --->   Operation 90 'icmp' 'icmp_ln94' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 91 [1/1] (2.55ns)   --->   "%icmp_ln94_1 = icmp_sgt  i32 %select_ln77_1, i32 %select_ln77_2" [seuilCout.c:94]   --->   Operation 91 'icmp' 'icmp_ln94_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 92 [1/1] (0.97ns)   --->   "%and_ln94 = and i1 %icmp_ln94, i1 %icmp_ln94_1" [seuilCout.c:94]   --->   Operation 92 'and' 'and_ln94' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 93 [1/1] (2.55ns)   --->   "%icmp_ln98 = icmp_sgt  i32 %select_ln77_2, i32 %select_ln77" [seuilCout.c:98]   --->   Operation 93 'icmp' 'icmp_ln98' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 94 [1/1] (2.55ns)   --->   "%icmp_ln98_1 = icmp_sgt  i32 %select_ln77_2, i32 %select_ln77_1" [seuilCout.c:98]   --->   Operation 94 'icmp' 'icmp_ln98_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 95 [1/1] (0.97ns)   --->   "%and_ln98 = and i1 %icmp_ln98, i1 %icmp_ln98_1" [seuilCout.c:98]   --->   Operation 95 'and' 'and_ln98' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 96 [1/1] (2.55ns)   --->   "%icmp_ln102 = icmp_eq  i32 %select_ln77, i32 %select_ln77_1" [seuilCout.c:102]   --->   Operation 96 'icmp' 'icmp_ln102' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node or_ln102_1)   --->   "%and_ln102 = and i1 %icmp_ln102, i1 %icmp_ln90_1" [seuilCout.c:102]   --->   Operation 97 'and' 'and_ln102' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 98 [1/1] (2.55ns)   --->   "%icmp_ln106 = icmp_ne  i32 %select_ln77, i32 %select_ln77_2" [seuilCout.c:106]   --->   Operation 98 'icmp' 'icmp_ln106' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%xor_ln106 = xor i1 %icmp_ln90, i1 1" [seuilCout.c:106]   --->   Operation 99 'xor' 'xor_ln106' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%or_ln106 = or i1 %icmp_ln106, i1 %xor_ln106" [seuilCout.c:106]   --->   Operation 100 'or' 'or_ln106' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 101 [1/1] (2.55ns)   --->   "%icmp_ln110 = icmp_eq  i32 %select_ln77_1, i32 %select_ln77_2" [seuilCout.c:110]   --->   Operation 101 'icmp' 'icmp_ln110' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 102 [1/1] (0.97ns)   --->   "%and_ln110 = and i1 %icmp_ln94, i1 %icmp_ln110" [seuilCout.c:110]   --->   Operation 102 'and' 'and_ln110' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%zext_ln90 = zext i1 %and_ln110" [seuilCout.c:90]   --->   Operation 103 'zext' 'zext_ln90' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%xor_ln90 = xor i1 %and_ln90, i1 1" [seuilCout.c:90]   --->   Operation 104 'xor' 'xor_ln90' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%and_ln94_1 = and i1 %and_ln94, i1 %xor_ln90" [seuilCout.c:94]   --->   Operation 105 'and' 'and_ln94_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 106 [1/1] (0.97ns)   --->   "%or_ln94 = or i1 %and_ln90, i1 %and_ln94" [seuilCout.c:94]   --->   Operation 106 'or' 'or_ln94' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node and_ln98_1)   --->   "%xor_ln94 = xor i1 %or_ln94, i1 1" [seuilCout.c:94]   --->   Operation 107 'xor' 'xor_ln94' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 108 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln98_1 = and i1 %and_ln98, i1 %xor_ln94" [seuilCout.c:98]   --->   Operation 108 'and' 'and_ln98_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%select_ln98 = select i1 %and_ln98_1, i2 0, i2 1" [seuilCout.c:98]   --->   Operation 109 'select' 'select_ln98' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%or_ln98 = or i1 %and_ln98_1, i1 %and_ln94_1" [seuilCout.c:98]   --->   Operation 110 'or' 'or_ln98' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 111 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln98_1 = select i1 %or_ln98, i2 %select_ln98, i2 2" [seuilCout.c:98]   --->   Operation 111 'select' 'select_ln98_1' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node or_ln102_1)   --->   "%or_ln102 = or i1 %and_ln98, i1 %and_ln102" [seuilCout.c:102]   --->   Operation 112 'or' 'or_ln102' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 113 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln102_1 = or i1 %or_ln102, i1 %or_ln94" [seuilCout.c:102]   --->   Operation 113 'or' 'or_ln102_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%xor_ln102 = xor i1 %or_ln102_1, i1 1" [seuilCout.c:102]   --->   Operation 114 'xor' 'xor_ln102' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%and_ln106 = and i1 %or_ln106, i1 %xor_ln102" [seuilCout.c:106]   --->   Operation 115 'and' 'and_ln106' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 116 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln106 = select i1 %and_ln106, i2 %zext_ln90, i2 %select_ln98_1" [seuilCout.c:106]   --->   Operation 116 'select' 'select_ln106' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 117 [1/1] (0.00ns)   --->   "%zext_ln106 = zext i2 %select_ln106" [seuilCout.c:106]   --->   Operation 117 'zext' 'zext_ln106' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node or_ln106_2)   --->   "%xor_ln106_1 = xor i1 %icmp_ln106, i1 1" [seuilCout.c:106]   --->   Operation 118 'xor' 'xor_ln106_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node or_ln106_2)   --->   "%and_ln106_1 = and i1 %icmp_ln90, i1 %xor_ln106_1" [seuilCout.c:106]   --->   Operation 119 'and' 'and_ln106_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 120 [1/1] (0.00ns) (grouped into LUT with out node or_ln106_2)   --->   "%or_ln106_1 = or i1 %or_ln102_1, i1 %and_ln106_1" [seuilCout.c:106]   --->   Operation 120 'or' 'or_ln106_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 121 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln106_2 = or i1 %or_ln106_1, i1 %and_ln110" [seuilCout.c:106]   --->   Operation 121 'or' 'or_ln106_2' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 122 [1/1] (0.00ns)   --->   "%zext_ln91 = zext i1 %or_ln106_2" [seuilCout.c:91]   --->   Operation 122 'zext' 'zext_ln91' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 123 [1/1] (0.00ns)   --->   "%write_ln91 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %resultats, i8 %zext_ln106" [seuilCout.c:91]   --->   Operation 123 'write' 'write_ln91' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 124 [1/1] (0.00ns)   --->   "%write_ln92 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %valid, i8 %zext_ln91" [seuilCout.c:92]   --->   Operation 124 'write' 'write_ln92' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 125 [1/1] (2.55ns)   --->   "%icmp_ln120 = icmp_eq  i32 %add_ln88, i32 107200" [seuilCout.c:120]   --->   Operation 125 'icmp' 'icmp_ln120' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node or_ln120)   --->   "%or_ln120_3 = or i1 %and_ln77_2, i1 %icmp_ln120" [seuilCout.c:120]   --->   Operation 126 'or' 'or_ln120_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 127 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln120 = or i1 %or_ln120_3, i1 %and_ln44" [seuilCout.c:120]   --->   Operation 127 'or' 'or_ln120' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 128 [1/1] (0.69ns)   --->   "%select_ln120 = select i1 %icmp_ln120, i32 0, i32 %select_ln77" [seuilCout.c:120]   --->   Operation 128 'select' 'select_ln120' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 129 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln120_1 = or i1 %icmp_ln120, i1 %xor_ln77_1" [seuilCout.c:120]   --->   Operation 129 'or' 'or_ln120_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 130 [1/1] (0.69ns)   --->   "%select_ln120_1 = select i1 %icmp_ln120, i32 0, i32 %select_ln77_1" [seuilCout.c:120]   --->   Operation 130 'select' 'select_ln120_1' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 131 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln120_2 = or i1 %icmp_ln120, i1 %xor_ln77_3" [seuilCout.c:120]   --->   Operation 131 'or' 'or_ln120_2' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 132 [1/1] (0.69ns)   --->   "%select_ln120_2 = select i1 %icmp_ln120, i32 0, i32 %select_ln77_2" [seuilCout.c:120]   --->   Operation 132 'select' 'select_ln120_2' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 133 [1/1] (0.69ns)   --->   "%select_ln120_3 = select i1 %icmp_ln120, i32 0, i32 %add_ln88" [seuilCout.c:120]   --->   Operation 133 'select' 'select_ln120_3' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 134 [1/1] (0.00ns)   --->   "%store_ln88 = store i32 %select_ln120_3, i32 %cptPix" [seuilCout.c:88]   --->   Operation 134 'store' 'store_ln88' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 135 [1/1] (0.00ns)   --->   "%br_ln120 = br i1 %or_ln120_2, void %if.end88.new4, void %mergeST3" [seuilCout.c:120]   --->   Operation 135 'br' 'br_ln120' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 136 [1/1] (0.00ns)   --->   "%store_ln54 = store i32 %select_ln120_2, i32 %cptB" [seuilCout.c:54]   --->   Operation 136 'store' 'store_ln54' <Predicate = (or_ln120_2)> <Delay = 0.00>
-ST_2 : Operation 137 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end88.new4"   --->   Operation 137 'br' 'br_ln0' <Predicate = (or_ln120_2)> <Delay = 0.00>
-ST_2 : Operation 138 [1/1] (0.00ns)   --->   "%br_ln120 = br i1 %or_ln120_1, void %if.end88.new2, void %mergeST1" [seuilCout.c:120]   --->   Operation 138 'br' 'br_ln120' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 139 [1/1] (0.00ns)   --->   "%store_ln50 = store i32 %select_ln120_1, i32 %cptG" [seuilCout.c:50]   --->   Operation 139 'store' 'store_ln50' <Predicate = (or_ln120_1)> <Delay = 0.00>
-ST_2 : Operation 140 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end88.new2"   --->   Operation 140 'br' 'br_ln0' <Predicate = (or_ln120_1)> <Delay = 0.00>
-ST_2 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln120 = br i1 %or_ln120, void %if.end88.new, void %mergeST" [seuilCout.c:120]   --->   Operation 141 'br' 'br_ln120' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 142 [1/1] (0.00ns)   --->   "%store_ln46 = store i32 %select_ln120, i32 %cptR" [seuilCout.c:46]   --->   Operation 142 'store' 'store_ln46' <Predicate = (or_ln120)> <Delay = 0.00>
-ST_2 : Operation 143 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end88.new"   --->   Operation 143 'br' 'br_ln0' <Predicate = (or_ln120)> <Delay = 0.00>
-ST_2 : Operation 144 [1/1] (0.00ns)   --->   "%ret_ln127 = ret" [seuilCout.c:127]   --->   Operation 144 'ret' 'ret_ln127' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%specpipeline_ln8 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:8]   --->   Operation 93 'specpipeline' 'specpipeline_ln8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%spectopmodule_ln26 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [seuilCout.c:26]   --->   Operation 94 'spectopmodule' 'spectopmodule_ln26' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %resultats"   --->   Operation 95 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %resultats, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 96 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %valid"   --->   Operation 97 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %valid, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 98 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i96 %pixIn"   --->   Operation 99 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %pixIn, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 100 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.00ns)   --->   "%cptB_load = load i32 %cptB" [seuilCout.c:54]   --->   Operation 101 'load' 'cptB_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 102 [1/1] (2.55ns)   --->   "%add_ln70 = add i32 %cptB_load, i32 1" [seuilCout.c:70]   --->   Operation 102 'add' 'add_ln70' <Predicate = (!or_ln77_8)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 103 [1/1] (0.69ns)   --->   "%select_ln77_2 = select i1 %or_ln77_8, i32 %cptB_load, i32 %add_ln70" [seuilCout.c:77]   --->   Operation 103 'select' 'select_ln77_2' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 104 [1/1] (2.55ns)   --->   "%icmp_ln90 = icmp_sgt  i32 %select_ln77, i32 %select_ln77_1" [seuilCout.c:90]   --->   Operation 104 'icmp' 'icmp_ln90' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 105 [1/1] (2.55ns)   --->   "%icmp_ln90_1 = icmp_sgt  i32 %select_ln77, i32 %select_ln77_2" [seuilCout.c:90]   --->   Operation 105 'icmp' 'icmp_ln90_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 106 [1/1] (0.97ns)   --->   "%and_ln90 = and i1 %icmp_ln90, i1 %icmp_ln90_1" [seuilCout.c:90]   --->   Operation 106 'and' 'and_ln90' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (2.55ns)   --->   "%icmp_ln94 = icmp_sgt  i32 %select_ln77_1, i32 %select_ln77" [seuilCout.c:94]   --->   Operation 107 'icmp' 'icmp_ln94' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 108 [1/1] (2.55ns)   --->   "%icmp_ln94_1 = icmp_sgt  i32 %select_ln77_1, i32 %select_ln77_2" [seuilCout.c:94]   --->   Operation 108 'icmp' 'icmp_ln94_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 109 [1/1] (0.97ns)   --->   "%and_ln94 = and i1 %icmp_ln94, i1 %icmp_ln94_1" [seuilCout.c:94]   --->   Operation 109 'and' 'and_ln94' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 110 [1/1] (2.55ns)   --->   "%icmp_ln98 = icmp_sgt  i32 %select_ln77_2, i32 %select_ln77" [seuilCout.c:98]   --->   Operation 110 'icmp' 'icmp_ln98' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 111 [1/1] (2.55ns)   --->   "%icmp_ln98_1 = icmp_sgt  i32 %select_ln77_2, i32 %select_ln77_1" [seuilCout.c:98]   --->   Operation 111 'icmp' 'icmp_ln98_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 112 [1/1] (0.97ns)   --->   "%and_ln98 = and i1 %icmp_ln98, i1 %icmp_ln98_1" [seuilCout.c:98]   --->   Operation 112 'and' 'and_ln98' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 113 [1/1] (2.55ns)   --->   "%icmp_ln102 = icmp_eq  i32 %select_ln77, i32 %select_ln77_1" [seuilCout.c:102]   --->   Operation 113 'icmp' 'icmp_ln102' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node or_ln102_1)   --->   "%and_ln102 = and i1 %icmp_ln102, i1 %icmp_ln90_1" [seuilCout.c:102]   --->   Operation 114 'and' 'and_ln102' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 115 [1/1] (2.55ns)   --->   "%icmp_ln106 = icmp_ne  i32 %select_ln77, i32 %select_ln77_2" [seuilCout.c:106]   --->   Operation 115 'icmp' 'icmp_ln106' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 116 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%xor_ln106 = xor i1 %icmp_ln90, i1 1" [seuilCout.c:106]   --->   Operation 116 'xor' 'xor_ln106' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%or_ln106 = or i1 %icmp_ln106, i1 %xor_ln106" [seuilCout.c:106]   --->   Operation 117 'or' 'or_ln106' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 118 [1/1] (2.55ns)   --->   "%icmp_ln110 = icmp_eq  i32 %select_ln77_1, i32 %select_ln77_2" [seuilCout.c:110]   --->   Operation 118 'icmp' 'icmp_ln110' <Predicate = true> <Delay = 2.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 119 [1/1] (0.97ns)   --->   "%and_ln110 = and i1 %icmp_ln94, i1 %icmp_ln110" [seuilCout.c:110]   --->   Operation 119 'and' 'and_ln110' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 120 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%zext_ln90 = zext i1 %and_ln110" [seuilCout.c:90]   --->   Operation 120 'zext' 'zext_ln90' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 121 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%xor_ln90 = xor i1 %and_ln90, i1 1" [seuilCout.c:90]   --->   Operation 121 'xor' 'xor_ln90' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%and_ln94_1 = and i1 %and_ln94, i1 %xor_ln90" [seuilCout.c:94]   --->   Operation 122 'and' 'and_ln94_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 123 [1/1] (0.97ns)   --->   "%or_ln94 = or i1 %and_ln90, i1 %and_ln94" [seuilCout.c:94]   --->   Operation 123 'or' 'or_ln94' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node and_ln98_1)   --->   "%xor_ln94 = xor i1 %or_ln94, i1 1" [seuilCout.c:94]   --->   Operation 124 'xor' 'xor_ln94' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 125 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln98_1 = and i1 %and_ln98, i1 %xor_ln94" [seuilCout.c:98]   --->   Operation 125 'and' 'and_ln98_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%select_ln98 = select i1 %and_ln98_1, i2 0, i2 1" [seuilCout.c:98]   --->   Operation 126 'select' 'select_ln98' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node select_ln98_1)   --->   "%or_ln98 = or i1 %and_ln98_1, i1 %and_ln94_1" [seuilCout.c:98]   --->   Operation 127 'or' 'or_ln98' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 128 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln98_1 = select i1 %or_ln98, i2 %select_ln98, i2 2" [seuilCout.c:98]   --->   Operation 128 'select' 'select_ln98_1' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node or_ln102_1)   --->   "%or_ln102 = or i1 %and_ln98, i1 %and_ln102" [seuilCout.c:102]   --->   Operation 129 'or' 'or_ln102' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 130 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln102_1 = or i1 %or_ln102, i1 %or_ln94" [seuilCout.c:102]   --->   Operation 130 'or' 'or_ln102_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%xor_ln102 = xor i1 %or_ln102_1, i1 1" [seuilCout.c:102]   --->   Operation 131 'xor' 'xor_ln102' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node select_ln106)   --->   "%and_ln106 = and i1 %or_ln106, i1 %xor_ln102" [seuilCout.c:106]   --->   Operation 132 'and' 'and_ln106' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 133 [1/1] (0.99ns) (out node of the LUT)   --->   "%select_ln106 = select i1 %and_ln106, i2 %zext_ln90, i2 %select_ln98_1" [seuilCout.c:106]   --->   Operation 133 'select' 'select_ln106' <Predicate = true> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 134 [1/1] (0.00ns)   --->   "%zext_ln106 = zext i2 %select_ln106" [seuilCout.c:106]   --->   Operation 134 'zext' 'zext_ln106' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node or_ln106_2)   --->   "%xor_ln106_1 = xor i1 %icmp_ln106, i1 1" [seuilCout.c:106]   --->   Operation 135 'xor' 'xor_ln106_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 136 [1/1] (0.00ns) (grouped into LUT with out node or_ln106_2)   --->   "%and_ln106_1 = and i1 %icmp_ln90, i1 %xor_ln106_1" [seuilCout.c:106]   --->   Operation 136 'and' 'and_ln106_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 137 [1/1] (0.00ns) (grouped into LUT with out node or_ln106_2)   --->   "%or_ln106_1 = or i1 %or_ln102_1, i1 %and_ln106_1" [seuilCout.c:106]   --->   Operation 137 'or' 'or_ln106_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 138 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln106_2 = or i1 %or_ln106_1, i1 %and_ln110" [seuilCout.c:106]   --->   Operation 138 'or' 'or_ln106_2' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 139 [1/1] (0.00ns)   --->   "%zext_ln91 = zext i1 %or_ln106_2" [seuilCout.c:91]   --->   Operation 139 'zext' 'zext_ln91' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 140 [1/1] (0.00ns)   --->   "%write_ln91 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %resultats, i8 %zext_ln106" [seuilCout.c:91]   --->   Operation 140 'write' 'write_ln91' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 141 [1/1] (0.00ns)   --->   "%write_ln92 = write void @_ssdm_op_Write.ap_auto.i8P0A, i8 %valid, i8 %zext_ln91" [seuilCout.c:92]   --->   Operation 141 'write' 'write_ln92' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 142 [1/1] (0.69ns)   --->   "%select_ln120_2 = select i1 %icmp_ln120, i32 0, i32 %select_ln77_2" [seuilCout.c:120]   --->   Operation 142 'select' 'select_ln120_2' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 143 [1/1] (0.00ns)   --->   "%store_ln54 = store i32 %select_ln120_2, i32 %cptB" [seuilCout.c:54]   --->   Operation 143 'store' 'store_ln54' <Predicate = (or_ln120_2)> <Delay = 0.00>
+ST_2 : Operation 144 [1/1] (0.00ns)   --->   "%br_ln0 = br void %if.end88.new4"   --->   Operation 144 'br' 'br_ln0' <Predicate = (or_ln120_2)> <Delay = 0.00>
+ST_2 : Operation 145 [1/1] (0.00ns)   --->   "%ret_ln127 = ret" [seuilCout.c:127]   --->   Operation 145 'ret' 'ret_ln127' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -227,33 +232,35 @@ ST_2 : Operation 144 [1/1] (0.00ns)   --->   "%ret_ln127 = ret" [seuilCout.c:127
 ============================================================
 Target clock period: 15.000ns, clock uncertainty: 4.050ns.
 
- <State 1>: 9.398ns
+ <State 1>: 10.096ns
 The critical path consists of the following:
-	wire read operation ('pixIn_read') on port 'pixIn' [15]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln48_1', seuilCout.c:48) [27]  (2.552 ns)
-	'and' operation 1 bit ('and_ln48', seuilCout.c:48) [28]  (0.978 ns)
-	'or' operation 1 bit ('or_ln48', seuilCout.c:48) [48]  (0.978 ns)
-	'or' operation 1 bit ('or_ln52_1', seuilCout.c:52) [49]  (0.978 ns)
-	'or' operation 1 bit ('or_ln56', seuilCout.c:56) [53]  (0.978 ns)
-	'or' operation 1 bit ('or_ln63', seuilCout.c:63) [57]  (0.978 ns)
-	'or' operation 1 bit ('or_ln70', seuilCout.c:70) [58]  (0.000 ns)
-	'xor' operation 1 bit ('xor_ln70_1', seuilCout.c:70) [59]  (0.000 ns)
-	'and' operation 1 bit ('and_ln77_3', seuilCout.c:77) [60]  (0.978 ns)
-	'select' operation 32 bit ('select_ln77', seuilCout.c:77) [61]  (0.978 ns)
+	wire read operation ('pixIn_read') on port 'pixIn' [16]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln44_1', seuilCout.c:44) [21]  (2.552 ns)
+	'and' operation 1 bit ('and_ln44', seuilCout.c:44) [22]  (0.978 ns)
+	'or' operation 1 bit ('or_ln48', seuilCout.c:48) [49]  (0.978 ns)
+	'or' operation 1 bit ('or_ln52_1', seuilCout.c:52) [50]  (0.978 ns)
+	'or' operation 1 bit ('or_ln56', seuilCout.c:56) [54]  (0.978 ns)
+	'or' operation 1 bit ('or_ln63', seuilCout.c:63) [58]  (0.978 ns)
+	'or' operation 1 bit ('or_ln70', seuilCout.c:70) [59]  (0.000 ns)
+	'xor' operation 1 bit ('xor_ln70_1', seuilCout.c:70) [60]  (0.000 ns)
+	'and' operation 1 bit ('and_ln77_3', seuilCout.c:77) [61]  (0.978 ns)
+	'select' operation 32 bit ('select_ln77_1', seuilCout.c:77) [80]  (0.978 ns)
+	'select' operation 32 bit ('select_ln120_1', seuilCout.c:120) [136]  (0.698 ns)
+	'store' operation 0 bit ('store_ln50', seuilCout.c:50) of variable 'select_ln120_1', seuilCout.c:120 on static variable 'cptG' [148]  (0.000 ns)
 
  <State 2>: 10.722ns
 The critical path consists of the following:
-	'load' operation 32 bit ('cptB_load', seuilCout.c:54) on static variable 'cptB' [24]  (0.000 ns)
-	'add' operation 32 bit ('add_ln70', seuilCout.c:70) [88]  (2.552 ns)
-	'select' operation 32 bit ('select_ln77_2', seuilCout.c:77) [89]  (0.698 ns)
-	'icmp' operation 1 bit ('icmp_ln90_1', seuilCout.c:90) [93]  (2.552 ns)
-	'and' operation 1 bit ('and_ln90', seuilCout.c:90) [94]  (0.978 ns)
-	'or' operation 1 bit ('or_ln94', seuilCout.c:94) [111]  (0.978 ns)
-	'xor' operation 1 bit ('xor_ln94', seuilCout.c:94) [112]  (0.000 ns)
-	'and' operation 1 bit ('and_ln98_1', seuilCout.c:98) [113]  (0.978 ns)
-	'select' operation 2 bit ('select_ln98', seuilCout.c:98) [114]  (0.000 ns)
-	'select' operation 2 bit ('select_ln98_1', seuilCout.c:98) [116]  (0.993 ns)
-	'select' operation 2 bit ('select_ln106', seuilCout.c:106) [121]  (0.993 ns)
+	'load' operation 32 bit ('cptB_load', seuilCout.c:54) on static variable 'cptB' [25]  (0.000 ns)
+	'add' operation 32 bit ('add_ln70', seuilCout.c:70) [89]  (2.552 ns)
+	'select' operation 32 bit ('select_ln77_2', seuilCout.c:77) [90]  (0.698 ns)
+	'icmp' operation 1 bit ('icmp_ln90_1', seuilCout.c:90) [94]  (2.552 ns)
+	'and' operation 1 bit ('and_ln90', seuilCout.c:90) [95]  (0.978 ns)
+	'or' operation 1 bit ('or_ln94', seuilCout.c:94) [112]  (0.978 ns)
+	'xor' operation 1 bit ('xor_ln94', seuilCout.c:94) [113]  (0.000 ns)
+	'and' operation 1 bit ('and_ln98_1', seuilCout.c:98) [114]  (0.978 ns)
+	'select' operation 2 bit ('select_ln98', seuilCout.c:98) [115]  (0.000 ns)
+	'select' operation 2 bit ('select_ln98_1', seuilCout.c:98) [117]  (0.993 ns)
+	'select' operation 2 bit ('select_ln106', seuilCout.c:106) [122]  (0.993 ns)
 
 
 ============================================================

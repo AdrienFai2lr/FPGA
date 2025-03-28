@@ -4,7 +4,7 @@
     "calls": "",
     "file": "seuilCout.c",
     "fileloc": 26,
-    "instructions": 148,
+    "instructions": 149,
     "loads": {
       "G": 16
     },
@@ -13,6 +13,6 @@
       "G": 17,
       "T": 15
     },
-    "total_instructions": 148
+    "total_instructions": 149
   }
 }

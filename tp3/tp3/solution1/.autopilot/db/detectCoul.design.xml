@@ -13,6 +13,7 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>15.00</TargetClockPeriod>
 <ClockUncertainty>4.05</ClockUncertainty>
+<TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <EstimatedClockPeriod>10.722</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
@@ -22,21 +23,22 @@
 <Best-caseRealTimeLatency>15.000 ns</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>15.000 ns</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>15.000 ns</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>2</PipelineInitiationInterval>
-<PipelineType>no</PipelineType>
+<PipelineInitiationInterval>1</PipelineInitiationInterval>
+<PipelineDepth>2</PipelineDepth>
+<PipelineType>yes</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>seuilCout.c:26</SourceLocation>
+<SourceLocation>/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:8</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>198</FF>
+<FF>197</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>1478</LUT>
+<LUT>1466</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>2</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'detectCoul'" level="0">
-<item name = "Date">Mon Mar 17 17:24:16 2025
+<item name = "Date">Fri Mar 28 16:16:27 2025
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">tp3</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1, 1, 15.000 ns, 15.000 ns, 2, 2, no</column>
+<column name="">1, 1, 15.000 ns, 15.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">

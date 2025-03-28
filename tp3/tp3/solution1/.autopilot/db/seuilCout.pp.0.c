@@ -192,6 +192,10 @@ __attribute__((sdx_kernel("detectCoul", 0))) void detectCoul(detectType *resulta
 #pragma HLSDIRECTIVE TOP name=detectCoul
 # 26 "seuilCout.c"
 
+#line 8 "/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl"
+#pragma HLSDIRECTIVE PIPELINE
+# 26 "seuilCout.c"
+
 
     colorType valR = pixIn.r;
     colorType valG = pixIn.g;
@@ -206,8 +210,8 @@ __attribute__((sdx_kernel("detectCoul", 0))) void detectCoul(detectType *resulta
     colorType resG = 0;
     colorType resB = 0;
 
-
     *valid = 0;
+
 
     if (valR > valG && valR > valB) {
         resR = valR;

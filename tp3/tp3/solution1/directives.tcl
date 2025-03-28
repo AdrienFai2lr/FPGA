@@ -5,3 +5,4 @@
 ## Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ############################################################
 set_directive_top -name detectCoul "detectCoul"
+set_directive_pipeline "detectCoul"

@@ -12,10 +12,10 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Register 'cptPix' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.959+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'cptB' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.943+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'cptG' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.938+0100" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'cptR' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-17T17:24:16.933+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptPix' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-28T16:16:27.298+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptB' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-28T16:16:27.293+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptG' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-28T16:16:27.288+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'cptR' is power-on initialization." projectName="tp3" solutionName="solution1" date="2025-03-28T16:16:27.283+0100" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

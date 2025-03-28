@@ -3,8 +3,8 @@
         "name": "detectCoul",
         "file": "seuilCout.c",
         "fileloc": "26",
-        "instructions": "142",
-        "total_instructions": "142",
+        "instructions": "143",
+        "total_instructions": "143",
         "calls": "",
         "basicblocks": "7",
         "loads": {

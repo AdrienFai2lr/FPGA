@@ -29,14 +29,14 @@
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
 |               | (1) lowering                | 147          | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           | 148          | high level synthesis optimizations                                                     |
+|               | (2) optimizations           | 149          | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
 +--------------+----------------+--------------+---------------+--------------+-------------+---------------+
 | Function     | Location       | Compile/Link | Unroll/Inline | Array/Struct | Performance | HW Transforms |
 +--------------+----------------+--------------+---------------+--------------+-------------+---------------+
-|   detectCoul | seuilCout.c:26 | 172          | 141           | 141          | 141         | 148           |
+|   detectCoul | seuilCout.c:26 | 172          | 141           | 141          | 141         | 149           |
 +--------------+----------------+--------------+---------------+--------------+-------------+---------------+
 
 * Design Size Message Settings

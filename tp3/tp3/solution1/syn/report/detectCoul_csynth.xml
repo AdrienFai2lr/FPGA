@@ -11,11 +11,12 @@
 <TopModelName>detectCoul</TopModelName>
 <TargetClockPeriod>15.00</TargetClockPeriod>
 <ClockUncertainty>4.05</ClockUncertainty>
+<TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>no</PipelineType>
+<PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
 <EstimatedClockPeriod>10.722</EstimatedClockPeriod>
@@ -28,20 +29,22 @@
 <Best-caseRealTimeLatency>15.000 ns</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>15.000 ns</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>15.000 ns</Worst-caseRealTimeLatency>
-<Interval-min>2</Interval-min>
-<Interval-max>2</Interval-max>
+<PipelineInitiationInterval>1</PipelineInitiationInterval>
+<PipelineDepth>2</PipelineDepth>
+<Interval-min>1</Interval-min>
+<Interval-max>1</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>seuilCout.c:26</SourceLocation>
+<SourceLocation>/home/etudiants/master1/adrien.failler/FPGA/tp3/tp3/solution1/directives.tcl:8</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>198</FF>
-<LUT>1478</LUT>
+<FF>197</FF>
+<LUT>1466</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
